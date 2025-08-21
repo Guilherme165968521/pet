@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fale Conosco - Petcommerce</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Estilo do botão */
+        #chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #008CBA;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #chat-button:hover {
+            background-color: #005f75;
+        }
+    </style>
 </head>
 <body>
 
@@ -49,20 +69,27 @@
         <p>&copy; 2025 Petcommerce. Todos os direitos reservados.</p>
     </footer>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68a7609f3b2d9e1926a1bf80/1j36t2s3r';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-    
+    <!-- Botão do Chat -->
+    <button id="chat-button" onclick="openChat()">💬</button>
+
+    <!-- Script para Tawk.to -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/68a7609f3b2d9e1926a1bf80/1j36t2s3r';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        // Função para abrir o chat
+        function openChat() {
+            Tawk_API.toggle(); // Mostra ou esconde o chat quando o botão é clicado
+        }
+    </script>
+
 </body>
 </html>
-
