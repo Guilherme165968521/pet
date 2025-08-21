@@ -1,0 +1,449 @@
+/* Resetando os padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff7f50;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: headerIn 1s ease-out;
+}
+
+header:hover {
+    background-color: #ff6347;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+nav img:hover {
+    transform: rotate(15deg) scale(1.1);
+    opacity: 0.8;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 8px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+ul li a:hover {
+    color: #ff6347;
+    transform: translateY(-5px);
+}
+
+ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Animações de Entrada */
+@keyframes headerIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInMain {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeInMain 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+iframe {
+    border: none;
+    width: 80%;
+    height: 60vh;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInIframe 1.5s ease-in-out 1s forwards;
+}
+
+@keyframes fadeInIframe {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-section {
+    animation: slideIn 1s ease-out;
+    margin-bottom: 50px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+footer {
+    background-color: #ff7f50;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Estilo para a seção de localização */
+#location {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: center;
+}
+
+#location h2 {
+    margin-bottom: 15px;
+    color: #ff6347;
+}
+
+#location p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilo para o input e botão de CEP */
+#cep-input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+#update-map {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#update-map:hover {
+    background-color: #2980b9;
+}
+
+/* Adicionando interações ao hover do footer */
+footer:hover {
+    background-color: #e67e22;
+    cursor: pointer;
+}
+
+/* Estilo geral para links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo para o título principal (h1) */
+h1 {
+    font-size: 48px;
+    color: #ff6347;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para subtítulos */
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* Estilo para o carregamento */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.loader .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #ff7f50;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
+}
+
+.loader p {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Animação de rotação do spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Resetando os padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff7f50;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+nav img:hover {
+    transform: rotate(15deg) scale(1.1);
+    opacity: 0.8;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 8px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+ul li a:hover {
+    color: #ff6347;
+    transform: translateY(-5px);
+}
+
+/* Seção Produtos */
+.products-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.products-section h1 {
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+.products-section p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Grid de Produtos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-card .product-price {
+    font-size: 18px;
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+.product-card .product-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-card button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #ff7f50;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+    background-color: #ff7f50;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 14px;
+}
+
